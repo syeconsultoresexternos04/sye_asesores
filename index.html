@@ -160,10 +160,13 @@
 
   /* ---------- ABOUT ---------- */
   .about-grid{display:grid; grid-template-columns:0.78fr 1.22fr; gap:70px; align-items:center;}
-  .about-photo{
+ .about-photo{
     aspect-ratio:4/5; background:linear-gradient(155deg, var(--navy) 0%, var(--navy-light) 100%);
     border:2px solid var(--gold); display:flex; align-items:center; justify-content:center;
     color:rgba(247,249,252,0.4); font-family:var(--mono); font-size:0.78rem; text-align:center; padding:20px;
+    overflow:hidden;
+  }
+  .about-photo img{width:100%; height:100%; object-fit:cover;}
   }
   .about-copy p{font-family:var(--sans); text-transform:none; color:rgba(16,24,43,0.75); margin-bottom:18px; font-size:1.02rem;}
   .about-quote{font-family:var(--display); font-weight:600; text-transform:none; font-size:1.4rem; color:var(--navy); border-left:4px solid var(--gold); padding-left:22px; margin:28px 0; line-height:1.35;}
@@ -374,7 +377,7 @@
 
 <section class="section" id="nosotros">
   <div class="wrap about-grid">
-    <div class="about-photo cut reveal">Espacio reservado<br>para foto del asesor</div>
+    <div class="about-photo cut reveal"><img src="assets/asesor.png" alt="Asesor de SYE Asesores Tributarios"></div>
     <div class="about-copy reveal">
       <div class="eyebrow">Nosotros</div>
       <h2 style="margin-bottom:20px;">Empresas sanas, dueños tranquilos</h2>
