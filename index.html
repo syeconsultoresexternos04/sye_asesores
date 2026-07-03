@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SYE Asesores Tributarios — Salazar y Echeverría | Contabilidad, impuestos y empresas en Ecuador</title>
+<meta name="description" content="Salazar y Echeverría Asesores Tributarios: contabilidad, declaraciones SRI, nómina, IESS y constitución de empresas SAS en Quito, Ecuador. Primera asesoría sin costo.">
+<link rel="icon" href="assets/logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#002555;
+    --navy-light:#0B3A78;
+    --navy-900:#001B3F;
+    --sky:#008AE2;
+    --gold:#F0B105;
+    --gold-soft:#FFCE4A;
+    --cream:#F7F9FC;
+    --carbon:#10182B;
+    --cut:22px;
+    --display:'Space Grotesk', sans-serif;
+    --sans:'IBM Plex Sans', sans-serif;
+    --mono:'IBM Plex Mono', monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--sans); color:var(--carbon); background:var(--cream); line-height:1.6; -webkit-font-smoothing:antialiased;}
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  .wrap{max-width:1200px; margin:0 auto; padding:0 32px;}
+  h1,h2,h3{font-family:var(--display); font-weight:700; letter-spacing:-0.01em; color:var(--navy); text-transform:uppercase;}
+
+  .cut{clip-path:polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%);}
+  .cut-sm{--cut:12px;}
+
+  .eyebrow{
+    font-family:var(--mono); font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--sky); display:flex; align-items:center; gap:10px; margin-bottom:16px; font-weight:600;
+  }
+  .eyebrow::before{content:""; width:26px; height:2px; background:var(--gold);}
+
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; font-family:var(--sans); font-weight:700;
+    font-size:0.92rem; padding:15px 28px; cursor:pointer; border:2px solid transparent;
+    transition:transform .18s ease, background .18s ease, border-color .18s ease, color .18s ease;
+  }
+  .btn:hover{transform:translate(2px,-2px);}
+  .btn-gold{background:var(--gold); color:var(--navy-900);}
+  .btn-gold:hover{background:var(--gold-soft);}
+  .btn-line{border-color:rgba(247,249,252,0.5); color:var(--cream);}
+  .btn-line:hover{border-color:var(--cream); background:rgba(247,249,252,0.08);}
+  .btn-line-navy{border-color:var(--navy); color:var(--navy);}
+  .btn-line-navy:hover{background:var(--navy); color:var(--cream);}
+
+  /* ---------- HEADER ---------- */
+  header{position:sticky; top:0; z-index:50; background:var(--navy); border-bottom:3px solid var(--gold);}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 32px; max-width:1200px; margin:0 auto;}
+  .logo{display:flex; align-items:center; gap:12px;}
+  .logo img{height:44px; width:auto;}
+  .logo-text{font-family:var(--display); font-weight:700; font-size:1.05rem; color:var(--cream); text-transform:uppercase; line-height:1.15;}
+  .logo-text small{display:block; font-family:var(--mono); font-size:0.62rem; letter-spacing:0.1em; color:var(--gold); font-weight:500; text-transform:uppercase; margin-top:2px;}
+  nav ul{display:flex; gap:36px;}
+  nav ul li a{font-size:0.86rem; font-weight:600; color:rgba(247,249,252,0.85); text-transform:uppercase; letter-spacing:0.03em; position:relative; padding-bottom:4px;}
+  nav ul li a::after{content:""; position:absolute; left:0; bottom:0; width:0; height:2px; background:var(--gold); transition:width .2s ease;}
+  nav ul li a:hover::after{width:100%;}
+  .nav-actions{display:flex; align-items:center; gap:18px;}
+  .menu-toggle{display:none; background:none; border:none; color:var(--cream); font-size:1.5rem; cursor:pointer;}
+  @media (max-width:900px){
+    nav ul{position:fixed; top:73px; left:0; right:0; flex-direction:column; gap:0; background:var(--navy-900);
+      max-height:0; overflow:hidden; transition:max-height .3s ease; border-bottom:3px solid var(--gold);}
+    nav ul.open{max-height:340px;}
+    nav ul li{width:100%; border-top:1px solid rgba(247,249,252,0.1);}
+    nav ul li a{display:block; padding:18px 32px;}
+    .nav-actions .btn-gold{display:none;}
+    .menu-toggle{display:block;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{background:var(--navy); color:var(--cream); padding:90px 0 0; overflow:hidden; position:relative;}
+  .hero-grid{display:grid; grid-template-columns:1.05fr 0.95fr; gap:20px; align-items:center; position:relative; z-index:2;}
+  .hero-copy{padding-bottom:90px;}
+  .hero h1{font-size:clamp(2.4rem,4.6vw,3.7rem); line-height:1.03; margin-bottom:24px; color:var(--cream);}
+  .hero h1 span{color:var(--gold);}
+  .hero p.lead{font-family:var(--sans); font-weight:400; text-transform:none; font-size:1.1rem; color:rgba(247,249,252,0.78); max-width:480px; margin-bottom:36px;}
+  .hero-actions{display:flex; gap:16px; flex-wrap:wrap; margin-bottom:44px;}
+  .hero-trust{display:flex; gap:36px; flex-wrap:wrap;}
+  .hero-trust div{font-family:var(--mono); font-size:0.76rem; color:rgba(247,249,252,0.6);}
+  .hero-trust strong{display:block; font-family:var(--display); font-size:1.7rem; color:var(--gold); font-weight:700;}
+
+  /* growth line signature */
+  .growth{position:relative; height:100%; min-height:420px; display:flex; align-items:center; justify-content:center;}
+  .growth svg{width:100%; height:auto; display:block;}
+  .illus-piece{opacity:0; transform:translateY(14px) scale(0.97); transform-origin:center; animation:pieceIn .55s ease forwards;}
+  .illus-piece.p1{animation-delay:.1s;} .illus-piece.p2{animation-delay:.3s;} .illus-piece.p3{animation-delay:.5s;}
+  .illus-piece.p4{animation-delay:.7s;} .illus-piece.p5{animation-delay:.9s;} .illus-piece.p6{animation-delay:1.05s;}
+  @keyframes pieceIn{to{opacity:1; transform:translateY(0) scale(1);}}
+  @media (prefers-reduced-motion:reduce){
+    .illus-piece{opacity:1; transform:none; animation:none;}
+  }
+  @media (max-width:900px){ .hero-grid{grid-template-columns:1fr;} .growth{min-height:280px; order:-1;} .hero-copy{padding-bottom:60px;} }
+
+  /* diagonal seam under hero */
+  .seam{height:60px; background:var(--gold); clip-path:polygon(0 100%, 100% 0, 100% 100%);}
+
+  /* ---------- TICKER STRIP ---------- */
+  .ticker{background:var(--sky); color:var(--navy-900); overflow:hidden; white-space:nowrap; padding:14px 0;}
+  .ticker-track{display:inline-flex; gap:48px; animation:scroll 26s linear infinite;}
+  .ticker-track span{font-family:var(--mono); font-size:0.82rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase;}
+  @keyframes scroll{from{transform:translateX(0);} to{transform:translateX(-50%);}}
+  @media (prefers-reduced-motion:reduce){.ticker-track{animation:none;}}
+
+  /* ---------- SECTION GENERIC ---------- */
+  .section{padding:100px 0;}
+  .section-head{max-width:660px; margin-bottom:60px;}
+  .section-head h2{font-size:clamp(1.9rem,3.4vw,2.6rem); margin-bottom:18px;}
+  .section-head p{font-family:var(--sans); text-transform:none; color:rgba(16,24,43,0.68); font-size:1.03rem;}
+
+  /* ---------- SERVICES ---------- */
+  .services-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .service-card{padding:34px 28px; color:var(--cream); display:flex; flex-direction:column; min-height:220px;}
+  .service-card h3{color:var(--cream); font-size:1.1rem; margin-bottom:12px; text-transform:none; letter-spacing:0;}
+  .service-card p{font-size:0.92rem; color:rgba(247,249,252,0.8); margin-bottom:20px; flex-grow:1;}
+  .service-card a{font-size:0.8rem; font-weight:700; font-family:var(--mono); text-transform:uppercase; letter-spacing:0.04em;}
+  .service-card.c-navy{background:var(--navy);}
+  .service-card.c-navy a{color:var(--gold);}
+  .service-card.c-light{background:#fff; border:2px solid var(--navy);}
+  .service-card.c-light h3, .service-card.c-light p{color:var(--carbon);}
+  .service-card.c-light a{color:var(--sky);}
+  @media (max-width:900px){.services-grid{grid-template-columns:1fr;}}
+
+  /* ---------- PROCESS (staircase) ---------- */
+  .process{background:var(--navy-900); color:var(--cream);}
+  .process .section-head p{color:rgba(247,249,252,0.68);}
+  .process .section-head h2{color:var(--cream);}
+  .stair{display:flex; gap:0; align-items:flex-end; flex-wrap:wrap;}
+  .stair-step{
+    flex:1; min-width:220px; background:var(--navy-light); padding:30px 26px 34px;
+    border-top:3px solid var(--gold); position:relative;
+  }
+  .stair-step:nth-child(1){margin-bottom:0;}
+  .stair-step:nth-child(2){margin-bottom:26px;}
+  .stair-step:nth-child(3){margin-bottom:52px;}
+  .stair-step + .stair-step{margin-left:20px;}
+  .stair-step .step-n{font-family:var(--mono); font-size:0.8rem; color:var(--gold); margin-bottom:16px; display:block;}
+  .stair-step h3{color:var(--cream); font-size:1.1rem; margin-bottom:10px; text-transform:none;}
+  .stair-step p{font-family:var(--sans); font-size:0.92rem; color:rgba(247,249,252,0.68);}
+  @media (max-width:760px){
+    .stair{flex-direction:column;}
+    .stair-step, .stair-step:nth-child(2), .stair-step:nth-child(3){margin:0 0 20px 0;}
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{display:grid; grid-template-columns:0.78fr 1.22fr; gap:70px; align-items:center;}
+  .about-photo{
+    aspect-ratio:4/5; background:linear-gradient(155deg, var(--navy) 0%, var(--navy-light) 100%);
+    border:2px solid var(--gold); display:flex; align-items:center; justify-content:center;
+    color:rgba(247,249,252,0.4); font-family:var(--mono); font-size:0.78rem; text-align:center; padding:20px;
+    overflow:hidden;
+  }
+  .about-photo img{width:100%; height:100%; object-fit:cover;}
+  .about-copy p{font-family:var(--sans); text-transform:none; color:rgba(16,24,43,0.75); margin-bottom:18px; font-size:1.02rem;}
+  .about-quote{font-family:var(--display); font-weight:600; text-transform:none; font-size:1.4rem; color:var(--navy); border-left:4px solid var(--gold); padding-left:22px; margin:28px 0; line-height:1.35;}
+  @media (max-width:860px){.about-grid{grid-template-columns:1fr;} .about-photo{max-width:280px;}}
+
+  /* ---------- CTA BANNER ---------- */
+  .cta-banner{background:var(--gold); color:var(--navy-900); padding:70px 0; text-align:center; position:relative;}
+  .cta-banner h2{color:var(--navy-900); font-size:clamp(1.7rem,3.2vw,2.3rem); margin-bottom:16px;}
+  .cta-banner p{font-family:var(--sans); text-transform:none; margin-bottom:32px; font-size:1.04rem; color:rgba(0,27,63,0.8);}
+  .cta-banner .btn-gold{background:var(--navy-900); color:var(--cream);}
+  .cta-banner .btn-gold:hover{background:var(--navy-light);}
+
+  /* ---------- CONTACT ---------- */
+  .contact{background:var(--cream);}
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:70px;}
+  .contact-info h3{font-size:1.35rem; margin-bottom:20px; text-transform:none;}
+  .contact-info p{font-family:var(--sans); text-transform:none; color:rgba(16,24,43,0.68); margin-bottom:30px;}
+  .info-row{display:flex; gap:14px; padding:17px 0; border-top:1px solid rgba(0,37,85,0.12);}
+  .info-row:last-child{border-bottom:1px solid rgba(0,37,85,0.12);}
+  .info-row .k{font-family:var(--mono); font-size:0.7rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--sky); width:110px; flex-shrink:0; padding-top:2px; font-weight:600;}
+  .info-row .v{font-size:0.95rem; color:var(--navy); font-weight:600;}
+  form{background:#fff; border-top:4px solid var(--navy); padding:34px; display:flex; flex-direction:column; gap:18px;}
+  .field label{display:block; font-family:var(--mono); font-size:0.7rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--navy); margin-bottom:8px; font-weight:600;}
+  .field input, .field select, .field textarea{
+    width:100%; border:2px solid rgba(0,37,85,0.18); background:var(--cream); padding:12px 14px;
+    font-family:var(--sans); font-size:0.95rem; color:var(--carbon);
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{outline:none; border-color:var(--sky); background:#fff;}
+  .field textarea{resize:vertical; min-height:100px;}
+  .form-note{font-family:var(--mono); font-size:0.72rem; color:rgba(16,24,43,0.5); margin-top:2px;}
+  .form-success{display:none; background:var(--navy); color:var(--cream); padding:24px 26px; border-left:4px solid var(--gold); font-family:var(--sans); font-size:0.95rem;}
+  .form-success.show{display:block;}
+  @media (max-width:860px){.contact-grid{grid-template-columns:1fr;}}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--navy-900); color:rgba(247,249,252,0.6); padding:56px 0 30px;}
+  .footer-top{display:flex; justify-content:space-between; flex-wrap:wrap; gap:36px; padding-bottom:38px; border-bottom:1px solid rgba(247,249,252,0.1);}
+  .footer-brand .logo{margin-bottom:14px;}
+  .footer-brand .logo img{height:38px;}
+  .footer-brand p{font-family:var(--sans); font-size:0.85rem; max-width:280px; color:rgba(247,249,252,0.5);}
+  .footer-cols{display:flex; gap:70px;}
+  .footer-col h4{font-family:var(--mono); font-size:0.7rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--gold); margin-bottom:18px; font-weight:600;}
+  .footer-col ul li{margin-bottom:11px;}
+  .footer-col ul li a{font-family:var(--sans); font-size:0.87rem; color:rgba(247,249,252,0.65);}
+  .footer-col ul li a:hover{color:var(--cream);}
+  .footer-bottom{display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; padding-top:24px; font-family:var(--mono); font-size:0.72rem;}
+  .footer-bottom a{color:rgba(247,249,252,0.75);}
+
+  /* ---------- COOKIE BANNER ---------- */
+  .cookie-banner{position:fixed; left:0; right:0; bottom:0; z-index:70; background:var(--navy-900); color:var(--cream); border-top:3px solid var(--gold); padding:22px 32px; display:none;}
+  .cookie-banner.show{display:block;}
+  .cookie-inner{max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;}
+  .cookie-inner p{font-family:var(--sans); font-size:0.86rem; color:rgba(247,249,252,0.78); max-width:640px; margin:0;}
+  .cookie-inner a{color:var(--gold); text-decoration:underline;}
+  .cookie-actions{display:flex; gap:12px; flex-shrink:0;}
+  .cookie-actions button{font-family:var(--sans); font-weight:700; font-size:0.85rem; padding:11px 22px; cursor:pointer; border:2px solid transparent;}
+  #cookieAccept{background:var(--gold); color:var(--navy-900);}
+  #cookieReject{background:transparent; border-color:rgba(247,249,252,0.4); color:var(--cream);}
+  @media (max-width:700px){.cookie-inner{flex-direction:column; align-items:flex-start;}}
+
+  /* ---------- WHATSAPP FLOAT ---------- */
+  .wa-float{position:fixed; bottom:26px; right:26px; z-index:60; width:60px; height:60px; background:var(--gold); color:var(--navy-900);
+    display:flex; align-items:center; justify-content:center; box-shadow:0 10px 28px rgba(0,37,85,0.4); transition:transform .2s ease;}
+  .wa-float:hover{transform:scale(1.08);}
+
+  /* reveal on scroll */
+  .reveal{opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1; transform:none; transition:none;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#top" class="logo">
+      <img src="assets/logo.png" alt="SYE Asesores Tributarios">
+      <span class="logo-text">Salazar y Echeverría<small>Asesores Tributarios · Ecuador</small></span>
+    </a>
+    <nav>
+      <ul id="navList">
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#proceso">Cómo trabajamos</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-gold cut-sm cut" href="#contacto">Consulta sin costo</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="eyebrow">Contabilidad · SRI · Nómina · Empresas SAS</div>
+      <h1>Tu contabilidad<br>y tus <span>impuestos</span><br>en orden.</h1>
+      <p class="lead">Llevamos la contabilidad, los impuestos y la nómina de tu negocio en Ecuador — con números claros y sin sorpresas. Del SRI a la nómina, lo manejamos todo.</p>
+      <div class="hero-actions">
+        <a href="#contacto" class="btn btn-gold cut">Agenda tu consulta sin costo</a>
+        <a href="#servicios" class="btn btn-line cut">Ver servicios</a>
+      </div>
+      <div class="hero-trust">
+        <div><strong>SRI</strong>Declaraciones al día</div>
+        <div><strong>IESS</strong>Nómina conforme a la ley</div>
+        <div><strong>SAS</strong>Constitución y cierre</div>
+      </div>
+    </div>
+    <div class="growth">
+      <svg viewBox="0 0 480 460" xmlns="http://www.w3.org/2000/svg">
+        <!-- fondo tipo escritorio -->
+        <rect class="illus-piece p1" x="20" y="40" width="440" height="390" rx="18" fill="#0B3A78" opacity="0.55"/>
+
+        <!-- barras ascendentes sutiles, esquina superior -->
+        <g class="illus-piece p1">
+          <rect x="368" y="96" width="16" height="26" rx="2" fill="#008AE2"/>
+          <rect x="392" y="80" width="16" height="42" rx="2" fill="#F0B105"/>
+          <rect x="416" y="60" width="16" height="62" rx="2" fill="#008AE2"/>
+          <rect x="440" y="42" width="16" height="80" rx="2" fill="#F0B105"/>
+        </g>
+
+        <!-- documento / declaración -->
+        <g class="illus-piece p2">
+          <rect x="68" y="72" width="216" height="286" rx="8" fill="#F7F9FC"/>
+          <rect x="68" y="72" width="216" height="40" rx="8" fill="#F0B105"/>
+          <rect x="68" y="98" width="216" height="14" fill="#F0B105"/>
+          <rect x="88" y="86" width="90" height="10" rx="2" fill="#002555" opacity="0.75"/>
+        </g>
+
+        <g class="illus-piece p3">
+          <rect x="88" y="134" width="176" height="9" rx="4" fill="#002555" opacity="0.16"/>
+          <rect x="88" y="156" width="176" height="9" rx="4" fill="#002555" opacity="0.16"/>
+          <rect x="88" y="178" width="120" height="9" rx="4" fill="#002555" opacity="0.16"/>
+
+          <rect x="88" y="206" width="176" height="1" fill="#002555" opacity="0.12"/>
+          <rect x="88" y="222" width="100" height="9" rx="4" fill="#002555" opacity="0.16"/>
+          <rect x="216" y="222" width="48" height="9" rx="4" fill="#008AE2" opacity="0.7"/>
+          <rect x="88" y="244" width="100" height="9" rx="4" fill="#002555" opacity="0.16"/>
+          <rect x="216" y="244" width="48" height="9" rx="4" fill="#008AE2" opacity="0.7"/>
+          <rect x="88" y="266" width="100" height="9" rx="4" fill="#002555" opacity="0.16"/>
+          <rect x="216" y="266" width="48" height="9" rx="4" fill="#F0B105" opacity="0.9"/>
+
+          <rect x="88" y="300" width="176" height="1" fill="#002555" opacity="0.12"/>
+          <rect x="88" y="318" width="70" height="12" rx="4" fill="#002555" opacity="0.85"/>
+          <rect x="196" y="318" width="68" height="12" rx="4" fill="#002555" opacity="0.85"/>
+        </g>
+
+        <!-- sello / check de "al dia" -->
+        <g class="illus-piece p4">
+          <circle cx="278" cy="108" r="30" fill="#008AE2"/>
+          <circle cx="278" cy="108" r="30" fill="none" stroke="#F7F9FC" stroke-width="2" stroke-dasharray="3 4"/>
+          <path d="M264 108 L274 118 L294 96" fill="none" stroke="#F7F9FC" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+
+        <!-- calculadora -->
+        <g class="illus-piece p5">
+          <rect x="252" y="222" width="150" height="184" rx="16" fill="#002555"/>
+          <rect x="270" y="240" width="114" height="38" rx="5" fill="#F0B105"/>
+          <rect x="280" y="253" width="60" height="10" rx="2" fill="#002555" opacity="0.55"/>
+          <g fill="#F7F9FC" opacity="0.9">
+            <rect x="270" y="292" width="24" height="20" rx="4"/>
+            <rect x="302" y="292" width="24" height="20" rx="4"/>
+            <rect x="334" y="292" width="24" height="20" rx="4"/>
+            <rect x="366" y="292" width="24" height="20" rx="4"/>
+            <rect x="270" y="320" width="24" height="20" rx="4" opacity="0.65"/>
+            <rect x="302" y="320" width="24" height="20" rx="4" opacity="0.65"/>
+            <rect x="334" y="320" width="24" height="20" rx="4" opacity="0.65"/>
+            <rect x="366" y="320" width="24" height="20" rx="4" fill="#008AE2" opacity="1"/>
+            <rect x="270" y="348" width="24" height="20" rx="4" opacity="0.65"/>
+            <rect x="302" y="348" width="24" height="20" rx="4" opacity="0.65"/>
+            <rect x="334" y="348" width="24" height="20" rx="4" opacity="0.65"/>
+            <rect x="366" y="348" width="24" height="20" rx="4" fill="#F0B105" opacity="1"/>
+          </g>
+        </g>
+
+        <!-- monedas -->
+        <g class="illus-piece p6">
+          <ellipse cx="112" cy="404" rx="46" ry="13" fill="#B87D08"/>
+          <ellipse cx="112" cy="394" rx="46" ry="13" fill="#F0B105"/>
+          <ellipse cx="112" cy="384" rx="46" ry="13" fill="#B87D08"/>
+          <ellipse cx="112" cy="374" rx="46" ry="13" fill="#F0B105"/>
+          <text x="112" y="379" font-family="IBM Plex Mono" font-size="14" font-weight="600" fill="#002555" text-anchor="middle">$</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+  <div class="seam"></div>
+</section>
+
+<div class="ticker">
+  <div class="ticker-track">
+    <span>★ Especialistas en LORTI y RIMPE</span>
+    <span>★ Atención personalizada, sin tercerizar tu caso</span>
+    <span>★ Primera consulta sin costo, siempre</span>
+    <span>★ Especialistas en LORTI y RIMPE</span>
+    <span>★ Atención personalizada, sin tercerizar tu caso</span>
+    <span>★ Primera consulta sin costo, siempre</span>
+  </div>
+</div>
+
+<section class="section" id="servicios">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Servicios</div>
+      <h2>Todo lo contable, en un solo lugar</h2>
+      <p>Trabajamos con personas naturales, negocios y empresas en todo Ecuador. Elige el servicio que necesitas o agenda una consulta y te orientamos sin costo.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card c-navy cut reveal">
+        <h3>Contabilidad integral</h3>
+        <p>Registros al día y decisiones basadas en números reales, para personas naturales y empresas.</p>
+        <a href="#contacto">Solicitar información →</a>
+      </div>
+      <div class="service-card c-light cut reveal">
+        <h3>Declaraciones SRI</h3>
+        <p>IVA, Impuesto a la Renta y anexos, presentados a tiempo y sin sorpresas de última hora.</p>
+        <a href="#contacto">Solicitar información →</a>
+      </div>
+      <div class="service-card c-navy cut reveal">
+        <h3>Constitución de empresas SAS</h3>
+        <p>Constituye tu empresa de forma legal, rápida y segura, lista para facturar.</p>
+        <a href="#contacto">Solicitar información →</a>
+      </div>
+      <div class="service-card c-light cut reveal">
+        <h3>Cierre de empresas SAS</h3>
+        <p>Liquidación y cierre de tu empresa sin trámites complicados.</p>
+        <a href="#contacto">Solicitar información →</a>
+      </div>
+      <div class="service-card c-navy cut reveal">
+        <h3>Nómina e IESS</h3>
+        <p>Roles de pago, aportes y beneficios sociales, conforme a la ley ecuatoriana.</p>
+        <a href="#contacto">Solicitar información →</a>
+      </div>
+      <div class="service-card c-light cut reveal">
+        <h3>Asesoría personalizada</h3>
+        <p>Consultas, diagnósticos y acompañamiento cercano para tu negocio, cuando lo necesites.</p>
+        <a href="#contacto">Solicitar información →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="proceso">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Cómo trabajamos</div>
+      <h2>Tres pasos, sin complicaciones</h2>
+      <p>Un proceso simple para que tu negocio quede al día desde la primera semana.</p>
+    </div>
+    <div class="stair">
+      <div class="stair-step reveal">
+        <span class="step-n">01 / Conversamos sin costo</span>
+        <h3>Contamos tu situación</h3>
+        <p>Nos cuentas cómo está tu negocio y resolvemos tus primeras dudas, sin compromiso.</p>
+      </div>
+      <div class="stair-step reveal">
+        <span class="step-n">02 / Diagnóstico y plan</span>
+        <h3>Armamos tu plan</h3>
+        <p>Revisamos tu situación tributaria y contable, y te proponemos un plan claro y a tu medida.</p>
+      </div>
+      <div class="stair-step reveal">
+        <span class="step-n">03 / Nos encargamos</span>
+        <h3>Todo al día</h3>
+        <p>Llevamos tu contabilidad, declaraciones y nómina al día, con reportes que puedes entender.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="nosotros">
+  <div class="wrap about-grid">
+    <div class="about-photo cut reveal"><img src="assets/asesor.png" alt="Asesor de SYE Asesores Tributarios"></div>
+    <div class="about-copy reveal">
+      <div class="eyebrow">Nosotros</div>
+      <h2 style="margin-bottom:20px;">Empresas sanas, dueños tranquilos</h2>
+      <p>En SYE Asesores Tributarios acompañamos a negocios y profesionales independientes en Ecuador para que su contabilidad y sus impuestos dejen de ser una preocupación.</p>
+      <p class="about-quote">"Números claros, decisiones seguras."</p>
+      <p>Nuestro equipo se mantiene al día con la normativa del SRI, la Superintendencia de Compañías y el Código de Trabajo, para que tú te enfoques en hacer crecer tu negocio.</p>
+      <a href="#contacto" class="btn btn-line-navy cut">Conoce cómo podemos ayudarte</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="wrap">
+    <h2>Primera asesoría sin costo — porque queremos que nos conozcas</h2>
+    <p>Escríbenos y te contactamos de inmediato para agendar una cita.</p>
+    <a href="#contacto" class="btn btn-gold cut">Quiero mi consulta sin costo</a>
+  </div>
+</section>
+
+<section class="section contact" id="contacto">
+  <div class="wrap contact-grid">
+    <div class="contact-info reveal">
+      <div class="eyebrow">Contacto</div>
+      <h3>Hablemos de tu negocio</h3>
+      <p>Escríbenos por el formulario o directamente por WhatsApp. Tu primera consulta no tiene costo.</p>
+      <div class="info-row"><div class="k">WhatsApp</div><div class="v">+593 98 741 7206</div></div>
+      <div class="info-row"><div class="k">Correo</div><div class="v">syeconsultoresexternos@gmail.com</div></div>
+      <div class="info-row"><div class="k">Ubicación</div><div class="v">Calle Bellavista, sector Agua Clara, Quito</div></div>
+      <div class="info-row"><div class="k">Horario</div><div class="v">Lun – Vie, 9:00 a 18:00</div></div>
+    </div>
+    <div class="reveal">
+      <form id="contactForm" class="cut" action="https://formspree.io/f/TU_ID_DE_FORMSPREE" method="POST">
+        <div class="field">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div class="field">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="field">
+          <label for="telefono">Teléfono / WhatsApp</label>
+          <input type="tel" id="telefono" name="telefono" required>
+        </div>
+        <div class="field">
+          <label for="servicio">Servicio de interés</label>
+          <select id="servicio" name="servicio">
+            <option>Contabilidad integral</option>
+            <option>Declaraciones SRI</option>
+            <option>Constitución de empresa SAS</option>
+            <option>Cierre de empresa SAS</option>
+            <option>Nómina e IESS</option>
+            <option>Asesoría personalizada</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="mensaje">Cuéntanos brevemente tu caso</label>
+          <textarea id="mensaje" name="mensaje"></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold cut">Enviar y agendar consulta</button>
+        <p class="form-note">Al enviar, te contactaremos por WhatsApp o correo en menos de 24 horas.</p>
+      </form>
+      <div class="form-success cut" id="formSuccess">
+        Gracias — recibimos tu mensaje. Te contactaremos muy pronto para agendar tu primera asesoría sin costo.
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#top" class="logo"><img src="assets/logo.png" alt="SYE Asesores Tributarios"></a>
+        <p>Contabilidad, impuestos, nómina y constitución de empresas para negocios en Ecuador.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Servicios</h4>
+          <ul>
+            <li><a href="#servicios">Contabilidad</a></li>
+            <li><a href="#servicios">Declaraciones SRI</a></li>
+            <li><a href="#servicios">Empresas SAS</a></li>
+            <li><a href="#servicios">Nómina e IESS</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Firma</h4>
+          <ul>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#proceso">Cómo trabajamos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SYE Asesores Tributarios. Todos los derechos reservados.</span>
+      <span><a href="privacidad.html">Política de Privacidad</a> · Quito, Ecuador</span>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookieBanner">
+  <div class="cookie-inner">
+    <p>Usamos cookies propias y de terceros (Google Ads, TikTok Ads) para mejorar tu experiencia y medir nuestras campañas publicitarias. Puedes leer más en nuestra <a href="privacidad.html">Política de Privacidad</a>.</p>
+    <div class="cookie-actions">
+      <button id="cookieReject">Rechazar</button>
+      <button id="cookieAccept">Aceptar</button>
+    </div>
+  </div>
+</div>
+
+<a class="wa-float" href="https://wa.me/593987417206?text=Hola%2C%20quiero%20agendar%20mi%20primera%20asesor%C3%ADa%20sin%20costo" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2C6.486 2 2 6.486 2 12.004c0 1.85.494 3.635 1.432 5.201L2 22l4.914-1.393a9.94 9.94 0 0 0 5.09 1.397h.004c5.518 0 10.004-4.486 10.004-10.004S17.522 2 12.004 2zm0 18.11h-.003a8.09 8.09 0 0 1-4.132-1.13l-.297-.176-3.05.864.824-2.98-.194-.306a8.09 8.09 0 0 1-1.24-4.378c0-4.47 3.638-8.108 8.096-8.108 2.163 0 4.196.844 5.726 2.376a8.043 8.043 0 0 1 2.372 5.735c0 4.47-3.638 8.103-8.102 8.103z"/></svg>
+</a>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navList = document.getElementById('navList');
+  menuToggle.addEventListener('click', () => navList.classList.toggle('open'));
+  navList.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navList.classList.remove('open')));
+
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+
+  const form = document.getElementById('contactForm');
+  const success = document.getElementById('formSuccess');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const data = new FormData(form);
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        form.style.display = 'none';
+        success.classList.add('show');
+      } else {
+        alert('Hubo un problema al enviar tu mensaje. Por favor intenta de nuevo o escríbenos por WhatsApp.');
+      }
+    }).catch(() => {
+      alert('Hubo un problema al enviar tu mensaje. Por favor intenta de nuevo o escríbenos por WhatsApp.');
+    });
+  });
+
+  const cookieBanner = document.getElementById('cookieBanner');
+  const cookieChoice = localStorage.getItem('sye_cookie_consent');
+  if (!cookieChoice) { cookieBanner.classList.add('show'); }
+  document.getElementById('cookieAccept').addEventListener('click', () => {
+    localStorage.setItem('sye_cookie_consent', 'accepted');
+    cookieBanner.classList.remove('show');
+    // Aquí se cargarían el Píxel de TikTok y la etiqueta de Google Ads/GTM.
+  });
+  document.getElementById('cookieReject').addEventListener('click', () => {
+    localStorage.setItem('sye_cookie_consent', 'rejected');
+    cookieBanner.classList.remove('show');
+  });
+</script>
+
+</body>
+</html>
